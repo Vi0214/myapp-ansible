@@ -1,0 +1,32 @@
+pipeline {
+	agent { label 'Maven' }
+		stages {
+                stage('git_checkout') {
+		   steps {
+                   git credentialsId: 'git_cred', url: 'https://github.com/Vi0214/myapp-ansible.git'
+			}
+		}
+      stage('ansible') {
+		   steps {
+             ansiblePlaybook credentialsId: 'ansible-key', disableHostKeyChecking: true, installation: 'ansible2', inventory: 'dev.inv', playbook: 'apache.yml'
+			}
+		}
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+pipleline{
+agent any{
+
+}
+}

@@ -1,5 +1,5 @@
 pipeline {
-	agent { label 'Maven' }
+	agent any
 		stages {
                 stage('git_checkout') {
 		   steps {
@@ -20,13 +20,3 @@ pipeline {
 
 
 
-
-
-
-
-
-pipleline{
-agent any{
-
-}
-}
